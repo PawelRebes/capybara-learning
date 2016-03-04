@@ -26,10 +26,12 @@ RSpec.feature "User Registration", type: :feature do
     end
 
     it "shows the correct navigation links" do
-      expect(page).to have_link('Home')
-      expect(page).to have_link('About')
-      expect(page).to have_link('Sign in')
-      expect(page).to have_link('Sign up')
+      within('.navbar') do
+        expect(page).to have_link('Home')
+        expect(page).to have_link('About')
+        expect(page).to have_link('Sign in')
+        expect(page).to have_link('Sign up')
+      end
       expect(page).to have_link('Forgot your password?')
     end
   end
